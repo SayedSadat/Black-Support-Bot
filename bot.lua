@@ -1,4 +1,4 @@
-local bot_api_key = "TOKEN" --Your telegram bot api key
+local bot_api_key = "339219039:AAFwNV4vWPj-Sw-oM6oInOE-5ia6KGeQ_Qs" --Your telegram bot api key
 local BASE_URL = "https://api.telegram.org/bot"..bot_api_key
 local BASE_FOLDER = ""
 local start = [[ ]] 
@@ -311,13 +311,13 @@ if msg then
 	sendMessage(msg.chat.id,list,true,nil,true)
 	
 	elseif msg.text:match("^/version") then
-	sendMessage(msg.chat.id,'*Black Support Bot*\n\n_Developer_ > [MehdiHS](https://telegram.me/MehdiHS)\n[My Channel](https://telegram.me/black_ch)\n\n _Bot Version_ : *4*',true,nil,true)
+	sendMessage(msg.chat.id,'',true,nil,true)
 	
     elseif msg.text:match("^/help") and not is_admin(msg) then
-	sendMessage(msg.chat.id,'*Black Support Bot Help:*\n\n\n `-` /version\n`نمایش ورژن ربات`\n\n `-` /plist\n`دریافت لیست قیمت ها برای‌خرید گروه`\n\n `-` /start\n`دریافت اطلاعاتی درباره خرید گروه`',true,nil,true)
+	sendMessage(msg.chat.id,'',true,nil,true)
 
 	elseif msg.text:match("^/help") and is_admin(msg) then
-	sendMessage(msg.chat.id,'_Black Support Help_ *(For Admin)*\n\n\n `-` /version\n`نمایش ورژن ربات`\n\n `-` /plist\n`دریافت لیست قیمت ها برای‌خرید گروه`\n\n `-` /start\n`دریافت اطلاعاتی درباره خرید گروه`\n\n `-` /users\n`نمایش تعداد افرادی که در ربات پیام دادند`\n\n `-` /block [reply]\n`بلاک کردن یک شخص با ریپلی`\n\n `-` /unblock [reply]\n`آنبلاک کردن یک شخص با ریپلی`\n\n `-` /setrealm\n`تنظیم گروه اصلی ربات`\n*نکته : اگر این دستور رو در داخل پیوی ربات بفرستید پیام ها به پیوی شما ارسال میشود*\n\n `-` /startmsg [متن]\nYou Can user {USERNAME} and {FirstName}\n`تنظیم یک متن به عنوان متن استارت`\n*نکته: این زمانی که کاربر دستور /start رو ارسال کنه نمایش داده میشه*\n\n `-` /donemsg [متن]\n`تنظیم یک متن برای تایید ارسال شدن پیام`\n\n `-` /help\n`نمایش تنظیمات ربات`\n\n `-` /clean blocklist\n`حذف کردن کل افراد بلاک شده از لیست بلاک شده ها`\n\n `-` /clean users\n`خالی کردن لیست افرادی که از ربات استفاده کرده اند`',true,nil,true)
+	sendMessage(msg.chat.id,'',true,nil,true)
     elseif msg.text:match("^/broadcast (.*)") and is_admin(msg) then 
           local gps = redis:smembers("pmrsn:users1") 
           local matches = { string.match(msg.text, "^/broadcast (.*)") } 
@@ -327,7 +327,7 @@ if msg then
       end 
        sendMessage(msg.chat.id,'Done.',true,nil,true)
     elseif msg.text:match("^/nerkh") or msg.text:match("^/plist") or msg.text:match("^/planlist") then
-	sendMessage(msg.chat.id,'*لیست قیمت های خرید گروه با* [BlackPlus](https://telegram.me/bIackplus)\n\n `-` *1 ماهه* > `5000` _تومان_\n `-` *3 ماهه* > `10000` _تومان_\n `-` *نامحدود* > `20000` _تومان_ ',true,nil,true)
+	sendMessage(msg.chat.id,' ',true,nil,true)
 	elseif msg.text:match("^/clean blocklist") and is_admin(msg) then
 	sendMessage(msg.chat.id,'لیستتتت افراد بلاک شده با موفقیت خالی شد.',true,nil,true)
 	redis:del('pmrsn:blocksa')
